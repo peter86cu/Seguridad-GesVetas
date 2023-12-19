@@ -1,0 +1,32 @@
+package com.ayalait.seguridad.service;
+
+import com.ayalait.seguridad.dao.ParametrosUsuariosDao;
+import com.ayalait.seguridad.modelo.*;
+import com.google.gson.Gson;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+@Service
+public class ParametrosUsuariosServiceImpl implements ParametrosUsuariosService {
+
+    @Autowired
+    ParametrosUsuariosDao service;
+    @Override
+    public ResponseEntity<String> listaEstadoUsuarios() {
+        try {
+            List<EstadoUsuarios> lstEstados=service.listaEstadosUsuarios();
+            if(!lstEstados.isEmpty()) {
+                return new ResponseEntity<String>(new Gson().toJson(lstEstados), HttpStatus.OK);
+            }else{
+                return new ResponseEntity<String>("No existen estados para los usuarios en la base de datos.",
+                        HttpStatus.BAD_REQUEST);
+            }
+        }catch (Exception e){
+            return new ResponseEntity<String>(e.getCause().getMessage(), HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
+	
+}
