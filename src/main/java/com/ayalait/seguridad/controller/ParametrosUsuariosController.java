@@ -24,4 +24,11 @@ public class ParametrosUsuariosController {
     }
     
     
+    @GetMapping(value="parametros/monedas",produces=MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<String> listadoDeMonedas() throws Exception {
+		return service.obtenerMonedas();
+		
+	}
+    
 }

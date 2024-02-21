@@ -6,6 +6,7 @@ public interface ParametrosUsuariosService {
 
     ResponseEntity<String> listaEstadoUsuarios();
     
-    
+	ResponseEntity<String> obtenerMonedas();
+
 
 }

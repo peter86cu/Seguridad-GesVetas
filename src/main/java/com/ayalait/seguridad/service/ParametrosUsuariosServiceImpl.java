@@ -28,5 +28,20 @@ public class ParametrosUsuariosServiceImpl implements ParametrosUsuariosService 
             return new ResponseEntity<String>(e.getCause().getMessage(), HttpStatus.NOT_ACCEPTABLE);
         }
     }
+	@Override
+	public ResponseEntity<String> obtenerMonedas() {
+		try {
+			List<Moneda> lstMoneda=service.obtenerMoneda();
+			if(!lstMoneda.isEmpty()) {
+				return new ResponseEntity<String>(new Gson().toJson(lstMoneda), HttpStatus.OK);
+			}else{
+				return new ResponseEntity<String>("No existen monedas en la base de datos.",
+						HttpStatus.BAD_REQUEST);
+			}
+		} catch (Exception e) {
+			return new ResponseEntity<String>(e.getCause().getCause().getMessage(),
+					HttpStatus.NOT_ACCEPTABLE);
+		}
+	}
 	
 }

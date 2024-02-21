@@ -9,5 +9,5 @@ public interface ParametrosUsuariosDao {
     //Estado usuarios
     List<EstadoUsuarios> listaEstadosUsuarios();
     
-   
+    List<Moneda> obtenerMoneda();
 }
