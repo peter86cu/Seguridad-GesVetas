@@ -21,23 +21,23 @@ public class Roles implements Serializable {
 
 	private String descripcion;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	/*@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "roles_modulos", joinColumns = {
 			@JoinColumn(name = "idrol", referencedColumnName = "idrol") }, inverseJoinColumns = {
 			@JoinColumn(name = "idmodulo", referencedColumnName = "idmodulo") })
-	private Set<Modulos> modulos;
+	private Set<Modulos> modulos;*/
 
 	public Roles() {
-		modulos = new HashSet<Modulos>();
+		//modulos = new HashSet<Modulos>();
 	}
 
-	public Set<Modulos> getModulos() {
+	/*public Set<Modulos> getModulos() {
 		return modulos;
 	}
 
 	public void setModulos(Set<Modulos> modulos) {
 		this.modulos = modulos;
-	}
+	}*/
 
 	public int getIdrol() {
 		return idrol;

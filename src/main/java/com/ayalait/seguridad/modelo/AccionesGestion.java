@@ -20,8 +20,8 @@ public class AccionesGestion implements Serializable {
 
 	private String accion;
 
-	@ManyToMany(mappedBy = "accion")
-	private transient Set<Gestiones> gestion= new HashSet<Gestiones>();
+	/*@ManyToMany(mappedBy = "accion")
+	private transient Set<Gestiones> gestion= new HashSet<Gestiones>();*/
 	
 	
 	public AccionesGestion() {
@@ -48,7 +48,7 @@ public class AccionesGestion implements Serializable {
 	}
 
 
-	public Set<Gestiones> getGestion() {
+	/*public Set<Gestiones> getGestion() {
 		return gestion;
 	}
 
@@ -56,7 +56,7 @@ public class AccionesGestion implements Serializable {
 	public void setGestion(Set<Gestiones> gestion) {
 		this.gestion = gestion;
 	}
-
+*/
 
 	
 }
